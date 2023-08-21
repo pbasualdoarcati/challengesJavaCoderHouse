@@ -32,7 +32,7 @@ The platform is https://www.coderhouse.com/
     * Data persistence in Java.
 - Spring boots:
     * REST API.
-    * git.
+    * Git.
     * Consumption of external apis and validations.
     * Aspects.
 
