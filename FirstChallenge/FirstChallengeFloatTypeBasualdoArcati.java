@@ -1,3 +1,4 @@
+package FirstChallenge;
 /**
  * The object this first challenge is find a method that returns the integer part
  * and separated the decimal part of a float type 

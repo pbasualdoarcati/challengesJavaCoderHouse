@@ -2,7 +2,11 @@ package SecondChallenge;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
+/*
+ * The objetive of this challenge is to create a program that will ask for the name and the surname of 5 people.
+ * With these objects, sort them by first or last name or by last name inversely
+ * As many times as the user wishes
+ */
 public class ListOrder {
     public static void main(String[] args) {
         Person[] people = new Person[5];
