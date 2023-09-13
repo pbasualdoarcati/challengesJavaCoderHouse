@@ -1,7 +1,10 @@
 package SecondChallenge;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 /*
  * The objetive of this challenge is to create a program that will ask for the name and the surname of 5 people.
  * With these objects, sort them by first or last name or by last name inversely
@@ -9,7 +12,8 @@ import java.util.Comparator;
  */
 public class ListOrder {
     public static void main(String[] args) {
-        Person[] people = new Person[5];
+        List<Person> people = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < 5; i++) {
             System.out.println("Please enter the name of the person number " + (i + 1) + ":");
@@ -20,7 +24,7 @@ public class ListOrder {
             Person person = new Person();
             person.setName(name);
             person.setSurname(surname);
-            people[i] = person;
+            people.add(person);
         }
 
         String select = selectOption();
@@ -37,6 +41,9 @@ public class ListOrder {
             }
         } while (answer.equals("yes"));
         
+        System.out.println("Thank you for your time");
+        scanner.close();
+        
     }
 
     public static String selectOption(){
@@ -44,9 +51,10 @@ public class ListOrder {
         System.out.println("1 - By name");
         System.out.println("2 - By surname");
         System.out.println("3 - Inversely by surname");
-        return System.console().readLine();
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
-    public static void selectOption (String select, Person[] people){
+    public static void selectOption (String select, List<Person> people){
         switch (select) {
             case "1":
             orderByName(people);
@@ -63,22 +71,22 @@ public class ListOrder {
             break;
         }
     }
-    public static void orderByName(Person[] people){
-        Arrays.sort(people, Comparator.comparing(Person::getName));
+    public static void orderByName(List<Person> people){
+        people.sort(Comparator.comparing(Person::getName));
         System.out.println("People sorted by name");
         for (Person person : people){
             System.out.println(person.getName() + " " + person.getSurname());
         }
     }
-    public static void orderBySurname(Person[] people){
-        Arrays.sort(people, Comparator.comparing(Person::getSurname));
+    public static void orderBySurname(List<Person> people){
+        people.sort(Comparator.comparing(Person::getSurname));
         System.out.println("People sorted by surname");
         for (Person person : people){
             System.out.println(person.getSurname() + " " + person.getName());
         }
     }
-    public static void orderByInverseSurname(Person[] people){
-        Arrays.sort(people, Comparator.comparing(Person::getSurname).reversed());
+    public static void orderByInverseSurname(List<Person> people){
+        people.sort(Comparator.comparing(Person::getSurname).reversed());
         System.out.println("People sorted by inverse surname");
         for (Person person : people){
             System.out.println(person.getSurname() + " " + person.getName());
