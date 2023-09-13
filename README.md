@@ -40,3 +40,15 @@ The platform is https://www.coderhouse.com/
 Create a main method that allows you to display the integer part and separate the decimal part of a float data type.
 * Aspects to include:
     * Deliver the class that executes without errors and leave the result in console.
+
+
+#### Slogan of the second challenge
+They must create the person class that has first and last name as attributes, both of type String, the class has its getters and setters methods for each attribute.
+They should create a second class where the main method will be as we know it. Create 5 objects: People with random names and surnames, it is important that they are names and surnames in Spanish.
+Having the 5 objects, add them to a list.
+Create the logic to alphabetize the list and display it in the console according to the following criteria:
+- Sorted by name.
+- Sorted by last name.
+- Sorted in reverse by last name.
+* Aspects to include:
+    * Deliver the class that runs without errors and leave the result in the console.
